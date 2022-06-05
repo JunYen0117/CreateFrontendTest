@@ -9,6 +9,7 @@
     <!-- Bootstrap CSS v5.0.2 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
+        /* 以下為模組化 */
         :root{
             --primary_color1: #b99664;
             --primary_color2: #dcd5ca;
@@ -20,12 +21,24 @@
             box-sizing: border-box;
             list-style: none;
         }
+        ul{
+          padding-inline-start: 0px;  /*取消bootstrap ul預設樣式*/
+          margin-bottom: 0px;
+        }
+        a{
+            color: white;
+            text-decoration: none;
+        }
+        /* 模組化結束 */
+
+
         header{
             height: 180px;
             box-shadow: 0 5px 5px rgba(185, 150, 100, .25);
+            position: relative;
         }
-        figure{
-            max-width: 140px;
+        .desktop_figure{
+            width: 140px;
         }
         .search_item{
             position: relative;
@@ -40,42 +53,134 @@
             right: 12px;
             top: 5px;
         }
-        .menu2 li{
+        .menu2 a{
+            display: block;
+            color: black;
+            text-decoration: none;
             padding: 9px 34px;
             border-radius: 22.5px;
             font-size: var(--desktop_title);
             font-weight: bold;
         }
-        .menu2 li:hover{
-            color: white;
-            background: var(--primary_color1);
+        .menu2 a:hover{
+          color: white;
+          background: var(--primary_color1);
+        }
+
+        /*以下為手機版*/
+        @media screen and (max-width:768px) {
+            header{
+                height: 90px;
+            }
+            .mobile_figure, .mobile_figure img{
+                width: 85px;                
+            }
+            .mobile_menu{
+                width: calc(100% - 1.1rem);
+                position: absolute;
+                top: 52px
+            }
+            .offcanvas_left{
+                width: 70%;
+            }
+            .offcanvas_left_menu{
+                background: #b99664;
+            }
+            .offcanvas_left_menu li{
+                height: 25vh;
+                position: relative;
+                border-bottom: 1px solid white;
+            }
+            .offcanvas_left_menu .last_li{
+                border-bottom: none;
+            }
+            .offcanvas_left_menu a{
+                display: block;
+                font-size: .875rem; /*14px*/
+                text-align: center;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-left: -28px;
+                margin-top: -10px;
+            }
         }
     </style>
   </head>
   <body>
       <header class="container-fluid">
-        <div class="d-flex justify-content-between">
+        <div class="d-none d-md-flex justify-content-between">
             <div class="d-flex">
-                <figure class="mx-5 mt-4">
-                    <img src="logo.svg" alt="#">
+                <figure class="desktop_figure mx-5 mt-4">
+                    <a href="#/">
+                    <img src="Logo.svg" alt="#">
+                    </a>
                 </figure>
-                <li class="search_item mt-5">
+                <li class="search_item d-none d-md-block mt-5">
                     <input class="search_bar" type="text">
-                    <a href="#" class="search_icon"><img src="search.svg" alt="#"></a>
+                    <a href="#/" class="search_icon"><img src="Search.svg" alt="#"></a>
                 </li>
             </div>
-            <ul class="menu1 d-flex pt-4">
-                <li class="shopcart_item mt-3 me-5"><img src="shopcart1.svg" alt="#"></li>
+            <ul class="menu1 d-none d-md-flex pt-4">
+                <li class="shopcart_item mt-3 me-5"><img src="Shopcart1.svg" alt="#"></li>
                 <li class="profile_item mt-3 me-5"><img src="未登入.svg" alt="#"></li>
             </ul>
         </div>
-            <ul class="menu2 d-flex justify-content-around pt-4">
-                <li>主題企劃</li>
-                <li>活動資訊</li>
-                <li>購物商城</li>
-                <li>文章專欄</li>
-                <li>關於我們</li>
+            <ul class="menu2 d-none d-md-flex justify-content-around pt-4">
+                <li><a href="#/">主題企劃</a></li>
+                <li><a href="#/">活動資訊</a></li>
+                <li><a href="#/">購物商城</a></li>
+                <li><a href="#/">文章專欄</a></li>
+                <li><a href="#/">關於我們</a></li>
             </ul>
+
+        <!-- 以下為手機版 -->
+        <figure class="mobile_figure d-md-none mx-auto pt-5">
+            <a href="#/">
+                <img src="Logo.svg" alt="#">
+            </a>
+        </figure>
+        <ul class="mobile_menu d-flex justify-content-between d-md-none">
+            <figure>
+                <a data-bs-toggle="offcanvas" href="#offcanvas_left" role="button" aria-controls="offcanvasExample">
+                    <img src="Hamburger.svg" alt="">
+                </a>
+            </figure>
+            <ul class="d-flex">
+                <figure class="me-3">
+                    <a href="#/">
+                        <img src="MobileSearch.svg" alt="">
+                    </a>
+                </figure>
+                <figure>
+                    <a data-bs-toggle="offcanvas" href="#offcanvas_right" role="button" aria-controls="offcanvasExample">
+                        <img src="More.svg" alt="">
+                    </a>
+                </figure>
+            </ul>
+        </ul>
+
+        <!-- offcanvas效果 -->
+        <div class="offcanvas_left offcanvas offcanvas-start d-md-none" tabindex="-1" id="offcanvas_left" aria-labelledby="offcanvasExampleLabel">
+            <ul class="offcanvas_left_menu offcanvas-body d-flex flex-column justify-content-around">
+                <li><a href="#/">主題企劃</a></li>
+                <li><a href="#/">活動資訊</a></li>
+                <li><a href="#/">購物商城</a></li>
+                <li><a href="#/">文章專欄</a></li>
+                <li class="last_li"><a href="#/">關於我們</a></li>
+            </ul>
+        </div>
+
+        <div class="offcanvas_left offcanvas offcanvas-end d-md-none" tabindex="-1" id="offcanvas_right" aria-labelledby="offcanvasExampleLabel">
+            <ul class="offcanvas_left_menu offcanvas-body d-flex flex-column justify-content-around">
+                <li><a href="#/">購物車</a></li>
+                <li><a href="#/">我的活動</a></li>
+                <li><a href="#/">我的收藏</a></li>
+                <li><a href="#/">帳戶設定</a></li>
+                <li><a href="#/">變更密碼</a></li>
+                <li class="last_li"><a href="#/">我的訂單</a></li>
+            </ul>
+        </div>
       </header>
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
