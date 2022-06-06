@@ -192,7 +192,6 @@
         //當視窗大於768寬度，會觸發點擊button按鈕，自動關閉offcanvas
         $(window).resize(function() {
             wdth=$(window).width();
-            console.log(wdth);
             if(wdth>=768){
                 $('.btn-close').trigger("click");
             }
