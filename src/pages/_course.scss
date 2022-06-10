@@ -1,0 +1,36 @@
+@import '../styles/global.scss';
+
+h1{
+  color:blue;
+}
+.nav-item{
+
+  .nav-link{
+    position: relative;
+    color:black;
+    font-size: 18px;
+    &:hover{
+      color:#b99664;
+    }
+    &:focus{
+      &::before{
+        content: "";
+        display: inline-block;
+        width: 4px;
+        height: 20px;
+        border-radius: 4px;
+        position: absolute;
+        left: 0px;
+        top: 10px;
+        
+        background: #b99664;
+      }
+      color:#b99664;
+      font-weight: bold;
+    }
+  }
+}
+
+ 
+
+   
