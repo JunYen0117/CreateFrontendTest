@@ -30,12 +30,24 @@ git merge origin/main      --> merge進你的分支
 src/ pages/ {Fav.js }    --> 檔名必大寫
 
 在 src/styles 裡面建立屬於自己的css or scss 
-ex: fav.css
-然後 import './global.css' (共同的)
+ex: _fav.css  --> 要加底線喔! 表示被import的檔
+然後 import './_global.css' (共同的)
 即可直接使用共同的css樣式
 
 
-在Index.js import './styles/fav.css' --> 自己的css檔
+在Index.js import './styles/_fav.css' --> 自己的css檔
+
+## 關於Styles
+index.scss 只用來連結檔案  
+其餘的scss統一前綴加_ 表示是被import的檔案  
+/styles/_variables  
+放變數  
+1.可延用或依照個人習慣自行新增  
+2.已經有引入boostrap scss 可自行更改變數(記得放在boostrap scss上面)  
+/styles/_global  
+1.放全域樣式  
+2.可延用或依照個人習慣自行新增  
+3.已經寫好的mixin可以直接include 就不用自己寫字體樣式  
 
 
 ## 命名方式
