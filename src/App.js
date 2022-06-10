@@ -1,10 +1,9 @@
 
-import Test from './Test';
 
 function App() {
   return (
   <>
-    <Test/>
+    </>
   </>
   );
 }
