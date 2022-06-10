@@ -1,1 +1,14 @@
-@import './global.css'
+@import './_global.scss';
+
+
+a {
+    font-size: 1.125rem;
+    color: $light;
+    text-decoration: none;
+    margin-right: 10px;
+    &:hover{
+        color: $primary;
+    }
+}
+
+
