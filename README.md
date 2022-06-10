@@ -37,6 +37,18 @@ ex: fav.css
 
 在Index.js import './styles/fav.css' --> 自己的css檔
 
+## 關於Styles
+index.scss 只用來連結檔案  
+其餘的scss統一前綴加_ 表示是被import的檔案  
+/styles/_variables  
+放變數  
+1.可延用或依照個人習慣自行新增  
+2.已經有引入boostrap scss 可自行更改變數(記得放在boostrap scss上面)  
+/styles/_global  
+1.放全域樣式  
+2.可延用或依照個人習慣自行新增  
+3.已經寫好的mixin可以直接include 就不用自己寫字體樣式  
+
 
 ## 命名方式
 
