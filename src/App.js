@@ -1,12 +1,11 @@
-
-import Test from './Test';
+import Fav from './pages/Fav'
 
 function App() {
   return (
-  <>
-    <Test/>
-  </>
-  );
+    <>
+      <Fav />
+    </>
+  )
 }
 
-export default App;
+export default App
