@@ -3,17 +3,17 @@ header沒做完的地方：
 2. 手機版搜尋引擎
 
 ### 開啟專案
-git clone 
-npm install
-npm start
+git clone    
+npm install   
+npm start   
 開啟 http://localhost:3000
 
 
 ### 關於styles
 
-index.css 只用來連結檔案
-其餘的scss統一前綴加_ 表示是被import的檔案
-/styles/_variables
+index.css 只用來連結檔案   
+其餘的scss統一前綴加_ 表示是被import的檔案   
+/styles/_variables   
 放變數
 可延用或依照個人習慣自行新增
 已經有引入
