@@ -5,20 +5,14 @@
 
  /* 顏色 Color */
 
-.primary{
-    color: #b99664;
-}
-.primary2{
-    color: #dcd5ca;
+ :root{
+    --primary_color1: #b99664;
+    --primary_color2: #dcd5ca;
+    --secondary_color1: #903f23;
+    --secondary_color2: #a5b6a4;
+    --desktop_title: 1.125rem; /*18px*/
 }
 
-.secondary{
-    color: #903f23;
-} 
-
-.secondary2 {
-    color: #a5b6a4;
-} 
 
 /* -------------------------------- */
 
