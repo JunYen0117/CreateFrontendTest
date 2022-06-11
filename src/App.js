@@ -3,7 +3,7 @@ import Coupon from "./pages/Coupon";
 function App() {
   return (
     <>
-      <Coupon />123123132
+      <Coupon />123
     </>
   );
 }
