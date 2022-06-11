@@ -1,11 +1,10 @@
-
-import Test from './Test';
+import Coupon from "./pages/Coupon";
 
 function App() {
   return (
-  <>
-    <Test/>
-  </>
+    <>
+      <Coupon />
+    </>
   );
 }
 
