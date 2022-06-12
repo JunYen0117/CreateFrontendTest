@@ -34,8 +34,10 @@
 
         header{
             height: 180px;
+            background: white;
             box-shadow: 0 5px 5px rgba(185, 150, 100, .25);
-            position: relative;
+            position: sticky;
+            top: 0;
         }
         .desktop_figure{
             width: 140px;
@@ -106,11 +108,12 @@
                 margin-top: -10px;
             }
             .mobile_search_bar_section{
-                display: flex;
-                position: absolute;
+                /* display: none; */
+                position: sticky;
                 top: 90px;
-                padding-left: 0px;
+                padding-left: 0px;  /*取消bootstrap padding, margin預設樣式*/
                 padding-right: 0px;
+                margin-top: 0rem !important;
             }
             .mobile_search_bar{
                 width: 80%;
@@ -122,7 +125,7 @@
                 opacity: .9;
                 
             }
-            .mobile_search_btn{
+            .mobile_search_btn, .mobile_search_btn:hover{
                 border-radius: 0%;
                 width: 20%;
                 color: white;
@@ -167,7 +170,7 @@
         </figure>
         <ul class="mobile_menu d-flex justify-content-between d-md-none">
             <figure>
-                <a data-bs-toggle="offcanvas" href="#offcanvas_left" role="button" aria-controls="offcanvasExample">
+                <a class="mobile_menu_burger" data-bs-toggle="offcanvas" href="#offcanvas_left" role="button" aria-controls="offcanvasExample">
                     <img src="Hamburger.svg" alt="">
                 </a>
             </figure>
@@ -178,7 +181,7 @@
                     </a>
                 </figure>
                 <figure>
-                    <a data-bs-toggle="offcanvas" href="#offcanvas_right" role="button" aria-controls="offcanvasExample">
+                    <a class="mobile_menu_more" data-bs-toggle="offcanvas" href="#offcanvas_right" role="button" aria-controls="offcanvasExample">
                         <img src="More.svg" alt="">
                     </a>
                 </figure>
@@ -213,7 +216,7 @@
       </header>
 
       <!-- 手機版隱藏式搜尋欄 -->
-      <section class="mobile_search_bar_section container-fluid d-md-none my-1">
+      <section class="mobile_search_bar_section container-fluid d-md-none my-1" style="display: none;">
         <input class="mobile_search_bar p-2" type="text">
         <button class="mobile_search_btn btn">搜尋</button>
       </section>
@@ -223,7 +226,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script>
-        //當視窗大於768寬度，會觸發點擊button按鈕，自動關閉offcanvas
+        //1. 當視窗大於768寬度，會觸發點擊.btn-close按鈕，自動關閉offcanvas
         $(window).resize(function() {
             wdth=$(window).width();
             if(wdth>=768){
@@ -231,10 +234,38 @@
             }
         });
 
-        //手機版，點選搜尋（放大鏡圖片），會跳出搜尋方框，再按一次則隱藏
-        $('.search_toggle').click(()=>{
-            $('.mobile_search_bar_section').toggle();
+
+        let searchToggle = document.querySelector('.search_toggle'); //手機版放大鏡按鈕
+        let sectionToggle = document.querySelector('.mobile_search_bar_section'); //隱藏式搜尋欄
+        let burger = document.querySelector('.mobile_menu_burger'); //手機版漢堡選單
+        let more = document.querySelector('.mobile_menu_more'); //手機版...選單
+
+
+        //2. 手機版點選放大鏡圖片，會顯示手機搜尋欄，再按一次則隱藏
+        searchToggle.addEventListener('click',()=>{
+            if(sectionToggle.style.display === "none"){
+                sectionToggle.style.display = "flex";
+            }else{
+                sectionToggle.style.display = "none";
+            }
         })
+
+        //3. 如果有顯示手機搜尋欄，按下漢堡選單，會隱藏手機搜尋欄
+        burger.addEventListener('click',()=>{
+            if(sectionToggle.style.display === "flex"){
+                sectionToggle.style.display = "none";
+                }
+            }
+        )
+
+        //4. 如果有顯示手機搜尋欄，按下...選單，會隱藏手機搜尋欄
+        more.addEventListener('click',()=>{
+            if(sectionToggle.style.display === "flex"){
+                sectionToggle.style.display = "none";
+                }
+            }
+        )
+
     </script>
   </body>
 </html>
