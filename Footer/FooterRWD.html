@@ -38,7 +38,7 @@
         }
       /* 模組化結束 */
 
-        footer{
+        .footer_desktop{
             height: 366px;
             background-color: var(--primary_color1);
         }
@@ -61,10 +61,18 @@
         .create_your_life{
           color: var(--secondary_color1);
         }
+
+         /*以下為手機版*/
+         /* @media screen and (max-width:768px) { */
+          .accordion p{
+            color: black;
+          }
+
+         /* } */
     </style>
   </head>
   <body>
-      <footer class="container-fluid">
+      <footer class="footer_desktop container-fluid">
         <div class="container">
           <!-- footer_up -->
           <ul class="footer_up_title d-flex pt-4">
@@ -73,7 +81,7 @@
               <li>認識</li>
               <li class="small_item">社群</li>
           </ul>
-          <ul class="footer_up_text d-flex py-5">
+          <ul class="footer_up_text d-flex py-4">
               <li>
                 <p>電話：03-400000</p>
                 <p>地址：桃園市中壢區新生路二段421號</p>
@@ -105,6 +113,25 @@
                 <li class="ms-3"><a href="#/">隱私權政策</a></li>
                 <li class="ms-3"><a href="#/">服務條款</a></li>
               </ul>
+          </div>
+        </div>
+      </footer>
+
+      <hr>
+
+      <footer class="footer_mobile accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Accordion Item #1
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <p>電話：03-400000</p>
+              <p>地址：桃園市中壢區新生路二段421號</p>
+              <p>信箱：color123@example.com</p>
+            </div>
           </div>
         </div>
       </footer>
