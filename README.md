@@ -22,7 +22,9 @@ git branch feature/{fav}   --> 建自己的分支 ex: { 自己取名 }  fav收�
 git switch feature/fav     --> 移動到此分支
 git fetch origin main      --> 抓main分支的資料(共用的css等等)
 git merge origin/main      --> merge進你的分支
+
 git push --set-upstream origin {自己分支的名稱}   --> 將本機新建好的分支，第一次要push上github時，要打的指令
+git clone -b {分支名稱} {分支網址}   --> 從遠端github拉特定分支，到本機裡。
 
 ```
 
