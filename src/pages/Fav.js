@@ -21,13 +21,14 @@ const Fav = () => {
 
       <h1>我的訂單</h1>
       <div className="border-bottom">
-        <a href="#">已完成</a>
-        <a href="#">已取消</a>
+        <a href="#/">已完成</a>
+        <a href="#/">已取消</a>
       </div>
       <div className="orderlist-card">
         <div className="card-title d-flex">
-          <div className='title-num'>20221212</div>
-          <div className='title-name'>Miu</div>
+          <p className="text-info">5555</p>
+          <div className="title-num">20221212</div>
+          <div className="title-name">Miu</div>
         </div>
         <div className="card-content">
           <table>
@@ -41,7 +42,10 @@ const Fav = () => {
             </tr>
           </table>
         </div>
-        <button className='card-button'>查看訂單明細</button>
+        <button className="card-button">查看訂單明細</button>
+        <button type="button" className="btn btn-dark">
+          Dark
+        </button>
       </div>
     </>
   )
