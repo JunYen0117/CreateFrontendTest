@@ -13,6 +13,8 @@ function GetCalendar() {
             setValue(value)
           }}
           value={value}
+          minDate={new Date(2022, 5, 1)}
+          maxDate={new Date(2022, 6, 30)}
         />
       </div>
       <p
@@ -20,7 +22,7 @@ function GetCalendar() {
           alert(`New date is: ${test}`)
         }}
       >
-        {value.toLocaleDateString()}
+        {value.toLocaleDateString().replace(/\//g, '-')}
       </p>
     </>
   )
