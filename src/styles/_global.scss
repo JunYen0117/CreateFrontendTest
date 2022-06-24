@@ -1,11 +1,81 @@
 // 這裡導入所有要預設變數覆蓋
 
+// =================顏色 =================
+$primary: #b99664;
+$secondary: #dcd5ca;
+$info: #903f23;
+$success: #a5b6a4;
+$light: #7b7b7b;
+
+$font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
+$h1-font-size:                $font-size-base * 1.375 !default;  // 22px
+$h2-font-size:                $font-size-base * 1.125 !default;  // 18px
+$h3-font-size:                $font-size-base * 1 !default;      // 16px
+$h4-font-size:                $font-size-base * 0.875 !default;  // 14px
+$h5-font-size:                $font-size-base * 0.75 !default;   // 12px
+$h6-font-size:                $font-size-base !default;
 
 // 導入Bootstrap所有的樣式與預設變數
 @import '~bootstrap/scss/bootstrap.scss';
 
+// 其它要導入覆蓋掉原本的預設Bootstrap樣式要放在這下面
+* {
+  box-sizing: border-box;
+  list-style: none;
 
-*{
-    box-sizing: border-box;
-    list-style: none;
 }
+
+.container-fluid{
+  padding-left: 0;
+  padding-right: 0;
+}
+
+figure{
+  margin: 0px;
+}
+
+ul, p {
+  padding-inline-start: 0px; 
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* =============== 文字大小 =============== */
+
+// h1: 22px
+// h2: 18px
+// h3: 16px
+// h4: 14px
+// h5: 12px
+
+h1 {
+  font-weight: 500;
+  font-size: 1.375rem;
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 1.125rem;
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+h4 {
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+
+h5 {
+  font-weight: 500;
+  font-size: 0.75rem;
+}
+

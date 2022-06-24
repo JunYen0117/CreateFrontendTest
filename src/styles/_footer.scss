@@ -1,0 +1,65 @@
+
+
+.footer_top {
+  padding-inline-start: 0px; 
+}
+
+.footer_a {
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+
+.footer_a:hover {
+  color: $info;
+}
+
+.footer_desktop {
+  margin-bottom: 0;
+  height: 366px;
+  background-color: $primary;
+}
+.footer_up_title li {
+  width: 28%;
+}
+.footer_up_title .small_item {
+  width: 16%;
+}
+.footer_up_text {
+  border-bottom: 2px solid $secondary;
+}
+.footer_up_text li {
+  width: 28%;
+}
+.footer_up_text .small_item {
+  width: 16%;
+}
+
+.create_your_life {
+  color: $info;
+  font-weight: bold;
+}
+
+/*以下為手機版*/
+@media screen and (max-width: 768px) {
+  .footer_mobile,
+  .accordion-item,
+  .accordion-button {
+    background: $primary !important;
+  }
+
+  .accordion-button {
+    color: white !important;
+    border-bottom: 1px solid white;
+  }
+  .accordion-button::after {
+    background-image: url(../img/FooterMobileBtn.svg);
+  }
+  .accordion-button:not(.collapsed)::after {
+    background-image: url(../img/FooterMobileBtn.svg);
+  }
+  .accordion-body p {
+    color: white;
+    text-align: center;
+  }
+}
